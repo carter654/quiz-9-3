@@ -41,5 +41,11 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v4
 
-      - name: Run tests in container
-        run: pytest
+      - name: Run tests with coverage
+        run: pytest --cov=main --cov-report=html
+
+      - name: Upload HTML coverage report
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: htmlcov/
