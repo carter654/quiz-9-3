@@ -10,7 +10,7 @@ jobs:
   test-in-container:
     runs-on: ubuntu-latest
     container:
-      image: orky/pyt:v0.1
+      image: ghcr.io/${{ github.repository }}:latest
 
     steps:
       - name: Check out code
